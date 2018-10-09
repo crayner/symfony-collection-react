@@ -21,7 +21,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 /**
- * Interface HillrangeCollectionReactExtension
+ * Class HillrangeCollectionReactExtension
  * @package Hillrange\Collection\React\DependencyInjection
  */
 class HillrangeCollectionReactExtension extends Extension

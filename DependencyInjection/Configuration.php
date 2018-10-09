@@ -32,6 +32,9 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
+        $treeBuilder
+            ->root('hillrange_collection_react')
+        ;
 
         return $treeBuilder;
     }

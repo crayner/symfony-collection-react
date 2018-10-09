@@ -1,0 +1,41 @@
+{
+    "name": "hillrange/symfony-collection-react",
+    "type": "symfony-bundle",
+    "description": "Integrate Symfony Collection Form elements using REACT for Symfony 4.1+",
+    "keywords": ["form"],
+    "homepage": "http://www.craigrayner.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Craig Rayner",
+            "email": "craig@craigrayner.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Hillrange\\Collection\\React\\": "/"
+        },
+        "exclude-from-classmap": [
+            "/tests/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hillrange\\Collection\\React\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.0-dev"
+        },
+        "symfony": {
+            "allow-contrib": "true"
+        }
+    },
+    "scripts": {}
+}

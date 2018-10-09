@@ -1,16 +1,16 @@
 <?php
-namespace Hillrange\Collection\Util;
+namespace Hillrange\Collection\React\Util;
 
 /**
  * Class VersionManager
- * @package Hillrange\Form\Util
+ * @package Hillrange\Collection\React\Util
  */
 class VersionManager
 {
     /**
      * String
      */
-    const VERSION = '0.0.00';
+    const VERSION = '0.0.01';
 
     /**
      * getVersion

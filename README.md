@@ -2,7 +2,7 @@
 Integrate Symfony Collection Form elements using REACT for Symfony 4.1+
 
 
-Version 0.0.02
+Version 0.0.03
 --------------
 
 The bundle is under development, so use at your own risk.

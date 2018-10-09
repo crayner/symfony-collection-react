@@ -9,11 +9,3 @@ services:
     Hillrange\Collection\React\:
         resource: "../../"
         exclude: "../../{Entity,Tests}"
-
-    Hillrange\Collection\React\Controller\:
-        resource: '../../Controller/'
-        tags: ['controller.service_arguments']
-
-    Hillrange\Collection\React\Twig\Extension\CollectionExtension:
-        tags:
-            - { name: 'twig.extension' }

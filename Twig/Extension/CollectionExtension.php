@@ -15,7 +15,7 @@
  */
 namespace Hillrange\Collection\React\Twig\Extension;
 
-use Symfony\Component\Form\Form;
+use Hillrange\Collection\React\Manager\CollectionManager;
 use Twig\Extension\AbstractExtension;
 
 /**
@@ -32,31 +32,33 @@ class CollectionExtension extends AbstractExtension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('reactCollection', [$this, 'reactCollection']),
+            new \Twig_SimpleFunction('collectionScript', [$this->collectionManager, 'collectionScript']),
+            new \Twig_SimpleFunction('collectionContainer', [$this->collectionManager, 'collectionContainer']),
+            new \Twig_SimpleFunction('collectionWidget', [$this->collectionManager, 'collectionWidget']),
+            new \Twig_SimpleFunction('collectionRow', [$this->collectionManager, 'collectionRow']),
+            new \Twig_SimpleFunction('getCollectionManager', [$this, 'getCollectionManager']),
         ];
     }
 
     /**
-     * @var \Twig_Environment
+     * @var CollectionManager
      */
-    private $twig;
+    private $collectionManager;
 
     /**
      * CollectionExtension constructor.
      * @param \Twig_Environment $twig
      */
-    public function __construct(\Twig_Environment $twig)
+    public function __construct(CollectionManager $collectionManager)
     {
-        $this->twig = $twig;
+        $this->collectionManager = $collectionManager;
     }
 
     /**
-     * reactCollection
-     *
-     * @param Form $form
+     * @return CollectionManager
      */
-    public function reactCollection(Form $form)
+    public function getCollectionManager(): CollectionManager
     {
-        dump($form);
+        return $this->collectionManager;
     }
 }

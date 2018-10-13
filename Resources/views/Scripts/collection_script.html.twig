@@ -1,0 +1,7 @@
+<!-- Collection React Script -->
+{% set collectionManager = getCollectionManager() %}
+<script language="JavaScript" type="text/javascript">
+    {% set props = collectionManager.props(collection) %}
+    window.COLLECTION_PROPS = {{ props|json_encode|raw }}
+</script>
+<script src="{{ asset('build/collection.js') }}" language="JavaScript" type="text/javascript"></script>

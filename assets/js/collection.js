@@ -2,12 +2,11 @@
 
 import React from 'react'
 import { render } from 'react-dom'
-import CollectionApp from './Collection/CollectionApp'
+import CollectionControl from './Collection/CollectionControl'
 
 render(
-    <CollectionApp
-        translations={window.COLLECTION_PROPS.translations}
-        locale={window.COLLECTION_PROPS.locale}
+    <CollectionControl
+        {...window.COLLECTION_PROPS}
     />,
     document.getElementById(window.COLLECTION_PROPS.collection_element)
 )

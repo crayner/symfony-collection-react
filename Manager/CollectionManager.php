@@ -101,9 +101,10 @@ class CollectionManager
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
      */
-    public function collectionScript(FormView $collection, array $template)
+    public function collectionScript(FormView $collection)
     {
-        $this->template = $template;
+        $this->template = $collection->vars['template'];
+
         $x = $this->getTwig()->render('@HillrangeCollectionReact/Scripts/collection_script.html.twig',
             [
                 'collection'        => $collection,

@@ -89,7 +89,7 @@ export default class CollectionControl extends Component {
             if (key !== eid)
                 return element;
         })
-        this.form.children = children
+        this.form.children = this.rebuildFormChildren(children)
         this.createForm({...this.form})
         this.setState({
             form: this.form,
@@ -121,6 +121,7 @@ export default class CollectionControl extends Component {
         vars.full_name = vars.full_name.replace('__name__', key)
         vars.id = vars.id.replace('__name__', key)
         vars.name = vars.name.replace('__name__', key)
+        vars.label = vars.label.replace('__name__', key)
 
         return vars;
     }
@@ -147,6 +148,25 @@ export default class CollectionControl extends Component {
         this.last = last.name
         this.form = form
         return this.form
+    }
+
+    rebuildFormChildren(children){
+        const name = this.prototype.name
+        const id = this.prototype.id
+        const fullName = this.prototype.full_name
+        const label = this.prototype.label
+
+        let counter = 0
+
+        const childList = children.map((child, key) => {
+            child.name = name.replace('__name__', counter)
+            child.id = id.replace('__name__', counter)
+            child.full_name = fullName.replace('__name__', counter)
+            child.label = label.replace('__name__', counter++)
+            return child
+        })
+
+        return childList
     }
 
     render() {

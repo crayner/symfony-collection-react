@@ -116,14 +116,13 @@ class CollectionManager
     /**
      * collectionContainer
      *
-     * @param FormView $form
-     * @param bool $setRendered
+     * @param FormView $collection
      * @return string
      */
     public function collectionContainer(FormView $collection): string
     {
         $this->setCollectionName($collection->vars['id']);
-        return '<div id="'.$this->getCollectionName().'_container"></div>';
+        return new \Twig_Markup('<div id="'.$this->getCollectionName().'_container"></div>', 'html');
     }
 
     /**
